@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
     Route::get('/', function () {
         return view('backend/auth.login');
     });
+    Route::get('home', 'HomeController@index')->name('admin.home');
     //Route::get('login', 'Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('login', 'Auth\LoginController@login');
     Route::post('logout', 'Auth\LoginController@logout')->name('admin.logout');

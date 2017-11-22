@@ -47,7 +47,7 @@ return [
         ],
 
         'backend'=>[
-            'dirver'=>'session',
+            'driver'=>'session',
             'provider'=>'admin'
         ]
     ],
