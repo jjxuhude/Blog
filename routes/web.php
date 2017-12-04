@@ -27,13 +27,13 @@ Route::group(['namespace' => 'Frontend'], function () {
 //后台
 Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
     Route::get('home', 'HomeController@index')->name('admin.home');
-    Route::get('/', function () {
-        return view('backend.auth.login');
-    });
+//    Route::get('/', function () {
+//        return view('backend.auth.login');
+//    });
     Route::get('register',function (){
         return view('backend.auth.register');
     });
-    //Route::get('login', 'Auth\LoginController@showLoginForm')->name('admin.login');
+    Route::get('/', 'Auth\LoginController@showLoginForm');
     //Route::get('register', 'Auth\RegisterController@showRegistrationForm');
     Route::post('login', 'Auth\LoginController@login');
     Route::post('logout', 'Auth\LoginController@logout');

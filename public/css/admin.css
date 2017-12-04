@@ -1,0 +1,6 @@
+#app > nav {
+  background: #000;
+}
+#app > nav a {
+  color: #fff;
+}
