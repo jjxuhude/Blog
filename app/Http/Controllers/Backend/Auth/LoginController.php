@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Auth;
 use App\Http\Controllers\Backend\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -45,12 +46,13 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-   
-        //$this->guard()->logout();
 
-       // $request->session()->invalidate();
 
-       // return redirect('/admin');
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/admin');
     }
 
     protected function guard()
