@@ -15,8 +15,34 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+//
+//Vue.component('example', require('./components/Example.vue'));
+
+import example from './components/Example.vue';
+import ElementUi from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css'
+import router from './router';
+import VueResource from 'vue-resource';
+
+Vue.use(ElementUi);
+Vue.use(VueResource);
+
+
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name=csrf-token]').getAttribute('content');
+Vue.http.interceptors.push(function (response,next){
+	
+	next(function (response){
+		return response;
+	});
+})
+
+
+    
+
+
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+	router,
+	components: { example }
 });

@@ -22,7 +22,15 @@ Route::get('/', function () {
 Route::group(['namespace' => 'Frontend'], function () {
     Route::get('home', 'HomeController@index')->name('home');
     Auth::routes();
+
+    Route::group(['prefix'=>'ajax'],function (){
+        Route::any('list','AjaxController@lists');
+    });
+
+
 });
+
+
 
 //后台
 Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
