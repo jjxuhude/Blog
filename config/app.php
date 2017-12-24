@@ -181,6 +181,8 @@ return [
 
         Laravel\Passport\PassportServiceProvider::class,
 
+        App\Providers\HtmlServiceProvider::class,
+
     ],
 
     /*
@@ -231,6 +233,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        'Html'=>App\Facades\Html::class,
 
     ],
 

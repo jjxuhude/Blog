@@ -27,4 +27,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    function address(){
+        return $this->hasOne(Address::class,'user444_id');
+    }
 }

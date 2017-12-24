@@ -21,6 +21,8 @@ Route::get('/', function () {
 //前台
 Route::group(['namespace' => 'Frontend'], function () {
     Route::get('home', 'HomeController@index')->name('home');
+    Route::get('test/{id}','TestController@index');
+    Route::get('test1','TestController@test1');
     Auth::routes();
 
     Route::group(['prefix'=>'ajax'],function (){
